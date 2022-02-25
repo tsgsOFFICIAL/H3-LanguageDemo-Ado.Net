@@ -1,41 +1,14 @@
-﻿@using System.Data.SqlClient;
-@using H3_LanguageDemo.Models
-@*@model H3_LanguageDemo.Models.TranslationText*@
+﻿@model List<H3_LanguageDemo.Models.TranslationText>
 @{
-    string _connectionString = "Server=localhost\\SQLEXPRESS;Database=LanguageDB;Trusted_Connection=true;";
-
-    List<TranslationText> _translationList = new List<TranslationText>();
-
     ViewBag.Title = "Home Page";
-    using (SqlConnection conn = new SqlConnection())
-    {
-        conn.ConnectionString = _connectionString;
-        conn.Open();
-
-        SqlCommand command = new SqlCommand("SELECT * FROM TranslationTable", conn);
-
-        // Create a new SqlDataReader object and read data from the command.
-        using (SqlDataReader reader = command.ExecuteReader())
-        {
-            //while there is another record present
-            while (reader.Read())
-            {
-                _translationList.Add(new TranslationText((int)reader[0], (string)reader[1], (string)reader[2], (string)reader[3], (string)reader[4]));
-                @*for (int i = 0; i < reader.FieldCount; i++)
-                    {
-                        @(reader[i])
-                        @("|\t")
-                    }*@
-                @*@:<br><br>*@
-            }
-        }
-    }
 }
+<script src="~/Scripts/Language.js" defer translation_text="@Json.Encode(Model)"></script>
 
 <div class="text-center">
     <img src="https://cloudkey.live/logo.png" alt="dansk_logo" title="dansk_logo" style="max-width: 5%; margin-top: 3rem;" />
 
-    <h1 class="display-4" data-translation="1">@_translationList[0].Hungary</h1>
-    <p data-translation="2">@_translationList[1].Hungary</p>
-    <p data-translation="3">@_translationList[2].Hungary</p>
+    <h1 class="display-4" data-translation="1">Velkommen</h1>
+    <p data-translation="2">Velkommen til vores test side, denne side har kun til formål at vi kan oversætte & se tekst på forskellige sprog.</p>
+    <p data-translation="3">Lavet af Marcus Jensen & Kent Pedersen</p>
+    <p data-translation="4"></p>
 </div>

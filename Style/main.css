@@ -1,0 +1,10 @@
+.languages {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+.languages img {
+    max-width: 2%;
+    cursor: pointer;
+}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using H3_LanguageDemo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,10 @@ namespace H3_LanguageDemo.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            DBManager dbManager = new DBManager();
+            List<TranslationText> translations = dbManager.GetTranslations();
+            
+            return View(translations);
         }
 
         public ActionResult About()
