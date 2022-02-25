@@ -8,3 +8,8 @@
     max-width: 2%;
     cursor: pointer;
 }
+
+span {
+    display: flex;
+    flex-flow: row nowrap;
+}

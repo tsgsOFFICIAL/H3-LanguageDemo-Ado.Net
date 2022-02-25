@@ -18,31 +18,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="/" data-translation="8"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li><a href="/" data-translation="5"></a></li>
+                    <li><a href="/about" data-translation="6"></a></li>
+                    <li><a href="/contact" data-translation="7"></a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
         <!-- Language selector -->
-        <span>
-            Select your language:
-            <div class="languages">
-                <img src="~/Assets/flags/gb-eng.svg" title="English" onclick="SetLanguage('en');" />
-                <img src="~/Assets/flags/dk.svg" title="Dansk" onclick="SetLanguage('da');" />
-                <img src="~/Assets/flags/fi.svg" title="Suomi" onclick="SetLanguage('fi');" />
-                <img src="~/Assets/flags/hu.svg" title="Magyar" onclick="SetLanguage('hu');" />
-            </div>
+        <p data-translation="4"></p>
+        <p data-translation="0"></p>
+        <span class="languages">
+            <img src="~/Assets/flags/gb-eng.svg" title="English" onclick="SetLanguage('en');" />
+            <img src="~/Assets/flags/dk.svg" title="Dansk" onclick="SetLanguage('da');" />
+            <img src="~/Assets/flags/fi.svg" title="Suomi" onclick="SetLanguage('fi');" />
+            <img src="~/Assets/flags/hu.svg" title="Magyar" onclick="SetLanguage('hu');" />
         </span>
 
         @*<label for="language-picker-select">Select your language</label>*
-        
+
         <select name="language-picker-select" id="language-picker-select">
             <option lang="en" value="en" selected>English</option>
             <option lang="de" value="da">Dansk</option>
@@ -52,7 +51,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <span>&copy; Stoneage - @(DateTime.Now.Year)_<span data-translation="8"></span></span>
         </footer>
     </div>
 

@@ -6,44 +6,44 @@ function UpdateLanguage(language) {
     textToTranslate.forEach(el => {
         //console.log(el.getAttribute("data-translation"));
         //console.log(el);
-        //el.innerHTML = "test";
+        //el.innerText = "test";
         switch (language) {
             case 'da':
             case 'da-DK':
                 try {
-                    el.innerHTML = `${translations[el.getAttribute("data-translation") - 1].Danish}`;
+                    el.innerText = `${translations[el.getAttribute("data-translation") - 1].Danish}`;
                 } catch (e) {
-                    el.innerHTML = `Dansk`;
+                    el.innerText = `Dansk`;
                 }
                 break;
             case 'en':
             case 'en-US':
             case 'en-GB':
                 try {
-                    el.innerHTML = `${translations[el.getAttribute("data-translation") - 1].English}`;
+                    el.innerText = `${translations[el.getAttribute("data-translation") - 1].English}`;
                 } catch (e) {
-                    el.innerHTML = `English`;
+                    el.innerText = `English`;
                 }
                 break;
             case 'fi':
                 try {
-                    el.innerHTML = `${translations[el.getAttribute("data-translation") - 1].Suomi}`;
+                    el.innerText = `${translations[el.getAttribute("data-translation") - 1].Suomi}`;
                 } catch (e) {
-                    el.innerHTML = `Suomi`;
+                    el.innerText = `Suomi`;
                 }
                 break;
             case 'hu':
                 try {
-                    el.innerHTML = `${translations[el.getAttribute("data-translation") - 1].Hungary}`;
+                    el.innerText = `${translations[el.getAttribute("data-translation") - 1].Hungary}`;
                 } catch (e) {
-                    el.innerHTML = `Magyar`;
+                    el.innerText = `Magyar`;
                 }
                 break;
             default:
                 try {
-                    el.innerHTML = `${translations[el.getAttribute("data-translation") - 1].English}`;
+                    el.innerText = `${translations[el.getAttribute("data-translation") - 1].English}`;
                 } catch (e) {
-                    el.innerHTML = `English`;
+                    el.innerText = `English`;
                 }
                 break;
         }
