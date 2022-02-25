@@ -36,7 +36,7 @@ function UpdateLanguage(language) {
                 try {
                     el.innerHTML = `${translations[el.getAttribute("data-translation") - 1].Hungary}`;
                 } catch (e) {
-                    el.innerHTML = `Hungary`;
+                    el.innerHTML = `Magyar`;
                 }
                 break;
             default:
