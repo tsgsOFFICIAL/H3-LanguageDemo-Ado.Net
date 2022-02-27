@@ -1,12 +1,12 @@
-﻿let translations = JSON.parse(document.currentScript.getAttribute('translation_text'));
+﻿// Import all translations from C#
+let translations = JSON.parse(document.currentScript.getAttribute('translation_text'));
+
+// Get a list of all HTML elements with the attribute data-translation, meaning they need to be translated
 let textToTranslate = document.querySelectorAll("[data-translation]");
 
+// A simple function to iterate over each element, and change it to the language specified in the parameter
 function UpdateLanguage(language) {
-    //console.log(`Updating to ${language}`);
     textToTranslate.forEach(el => {
-        //console.log(el.getAttribute("data-translation"));
-        //console.log(el);
-        //el.innerText = "test";
         switch (language) {
             case 'da':
             case 'da-DK':
@@ -50,6 +50,8 @@ function UpdateLanguage(language) {
     });
 }
 
+// A helper function to set the language, this can also be called from other js files.
+// This will also change the selected flag, to make it pop out more, and add a shadow to it
 function SetLanguage(el) {
     UpdateLanguage(el.getAttribute("data-flag"));
 
@@ -60,8 +62,10 @@ function SetLanguage(el) {
     el.classList.add("selected");
 }
 
+// On startup, run updateLanguage with the default language
 UpdateLanguage(window.navigator.language);
 
+// Give the current language flag the styling from the beginning
 let lookingFor = "en";
 
 switch (window.navigator.language) {
@@ -84,6 +88,7 @@ switch (window.navigator.language) {
         break;
 }
 
+// Iterate over each flag
 document.querySelectorAll("[data-flag]").forEach(flag => {
     let lang = flag.getAttribute("data-flag");
 
@@ -91,8 +96,3 @@ document.querySelectorAll("[data-flag]").forEach(flag => {
         flag.classList.add("selected");
     }
 });
-
-//console.log(language)
-
-
-//console.log(translations)

@@ -2,6 +2,11 @@
 @{
     ViewBag.Title = "Home Page";
 }
+<!--
+    Import another JS file, this is where we change the language.
+    The defer keyword, means to load after the page content, this is important to be able to translate all elements.
+    Also the translation_text is a JSON string, passed from C# to the JS file, this holds all the text, in all languages.
+-->
 <script src="~/Scripts/Language.js" defer translation_text="@Json.Encode(Model)"></script>
 
 <div class="text-center">

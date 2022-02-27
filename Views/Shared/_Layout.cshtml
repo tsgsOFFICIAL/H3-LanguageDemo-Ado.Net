@@ -4,8 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <!-- Link to LanguageSelector.js & a simple stylesheet -->
     <script src="~/Scripts/LanguageSelector.js" defer></script>
     <link rel="stylesheet" href="~/Style/main.css">
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -30,6 +33,7 @@
         </div>
     </div>
     <div class="container body-content">
+
         <!-- Language selector -->
         <p data-translation="4"></p>
         <p data-translation="0"></p>
@@ -40,7 +44,9 @@
             <img data-flag="hu" src="~/Assets/flags/hu.svg" title="Magyar" onclick="SetLanguage(this);" />
         </span>
 
-        @*<label for="language-picker-select">Select your language</label>*
+        @*
+        <!-- Dropdown for language selector -->
+        <label for="language-picker-select">Select your language</label>*
 
         <select name="language-picker-select" id="language-picker-select">
             <option lang="en" value="en" selected>English</option>
@@ -48,6 +54,7 @@
             <option lang="fi" value="fi">Suomi</option>
             <option lang="hu" value="hu">Magyar</option>
         </select>*@
+
         @RenderBody()
         <hr />
         <footer>
