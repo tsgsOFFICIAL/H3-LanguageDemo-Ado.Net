@@ -7,17 +7,31 @@ using System.Web;
 
 namespace H3_LanguageDemo.Controllers
 {
+    /// <summary>
+    /// A Database manager, that will hold the connection to the database &amp; execute queries.
+    /// </summary>
     public class DBManager
     {
+        /// <summary>
+        /// Connection string for the database
+        /// </summary>
         string _connectionString;
+        /// <summary>
+        /// List of TranslationText objects
+        /// </summary>
         List<TranslationText> _translationList;
-
+        /// <summary>
+        /// Constructor for the DBManager 
+        /// </summary>
         public DBManager()
         {
             _connectionString = "Server=localhost\\SQLEXPRESS;Database=LanguageDB;Trusted_Connection=true;";
             _translationList = new List<TranslationText>();
         }
-
+        /// <summary>
+        /// Get all translations, in all languages
+        /// </summary>
+        /// <returns>This method returns a List of TranslationText objects</returns>
         public List<TranslationText> GetTranslations()
         {
             using (SqlConnection conn = new SqlConnection())
@@ -39,7 +53,5 @@ namespace H3_LanguageDemo.Controllers
             }
             return _translationList;
         }
-
-        //DBContext = Connection string
     }
 }
