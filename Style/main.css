@@ -7,9 +7,16 @@
 .languages img {
     max-width: 2%;
     cursor: pointer;
+    border-radius: 50%;
+    transition: all .3s ease;
 }
 
 span {
     display: flex;
     flex-flow: row nowrap;
+}
+
+.languages img.selected {
+    max-width: 2.5%;
+    box-shadow: 0 0.6rem 1rem 0 rgba(0,0,0,.6);
 }

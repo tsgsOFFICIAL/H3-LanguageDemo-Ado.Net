@@ -1,15 +1,17 @@
+/*
 let selector = document.getElementById("language-picker-select");
 
 selector.onchange = () => {
     SetLanguage(selector.querySelectorAll("option")[selector.selectedIndex].value);
 }
-
+*/
 /*
  0 = English
  1 = Dansk
  2 = Finnish
  3 = Magyar
 */
+/*
 switch (window.navigator.language) {
     case 'da':
     case 'da-DK':
@@ -29,3 +31,4 @@ switch (window.navigator.language) {
         selector.selectedIndex = 0;
         break;
 }
+*/

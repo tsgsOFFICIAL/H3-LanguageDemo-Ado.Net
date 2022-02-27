@@ -50,11 +50,47 @@ function UpdateLanguage(language) {
     });
 }
 
-function SetLanguage(l) {
-    UpdateLanguage(l);
+function SetLanguage(el) {
+    UpdateLanguage(el.getAttribute("data-flag"));
+
+    document.querySelectorAll("[data-flag]").forEach(flag => {
+        flag.classList.remove("selected");
+    });
+
+    el.classList.add("selected");
 }
 
 UpdateLanguage(window.navigator.language);
+
+let lookingFor = "en";
+
+switch (window.navigator.language) {
+    case 'da':
+    case 'da-DK':
+        lookingFor = "da";
+        break;
+    case 'en':
+    case 'en-US':
+    case 'en-GB':
+        lookingFor = "en";
+        break;
+    case 'fi':
+        lookingFor = "fi";
+        break;
+    case 'hu':
+        lookingFor = "hu";
+    default:
+        lookingFor = "en";
+        break;
+}
+
+document.querySelectorAll("[data-flag]").forEach(flag => {
+    let lang = flag.getAttribute("data-flag");
+
+    if (lang == lookingFor) {
+        flag.classList.add("selected");
+    }
+});
 
 //console.log(language)
 

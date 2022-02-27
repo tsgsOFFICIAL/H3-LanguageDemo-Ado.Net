@@ -34,10 +34,10 @@
         <p data-translation="4"></p>
         <p data-translation="0"></p>
         <span class="languages">
-            <img src="~/Assets/flags/gb-eng.svg" title="English" onclick="SetLanguage('en');" />
-            <img src="~/Assets/flags/dk.svg" title="Dansk" onclick="SetLanguage('da');" />
-            <img src="~/Assets/flags/fi.svg" title="Suomi" onclick="SetLanguage('fi');" />
-            <img src="~/Assets/flags/hu.svg" title="Magyar" onclick="SetLanguage('hu');" />
+            <img data-flag="en" src="~/Assets/flags/gb.svg" title="English" onclick="SetLanguage(this);" />
+            <img data-flag="da" src="~/Assets/flags/dk.svg" title="Dansk" onclick="SetLanguage(this);" />
+            <img data-flag="fi" src="~/Assets/flags/fi.svg" title="Suomi" onclick="SetLanguage(this);" />
+            <img data-flag="hu" src="~/Assets/flags/hu.svg" title="Magyar" onclick="SetLanguage(this);" />
         </span>
 
         @*<label for="language-picker-select">Select your language</label>*
