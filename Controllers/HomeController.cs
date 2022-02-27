@@ -11,9 +11,11 @@ namespace H3_LanguageDemo.Controllers
     {
         public ActionResult Index()
         {
+            // Create a new instance of the DBManager
             DBManager dbManager = new DBManager();
             List<TranslationText> translations = dbManager.GetTranslations();
             
+            // Returns a model of List<TranslationText> to the index view
             return View(translations);
         }
 
