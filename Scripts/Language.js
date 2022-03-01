@@ -83,6 +83,7 @@ switch (window.navigator.language) {
         break;
     case 'hu':
         lookingFor = "hu";
+        break;
     default:
         lookingFor = "en";
         break;
